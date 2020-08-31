@@ -1,6 +1,7 @@
 package com.techproed;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -35,6 +36,16 @@ public class Day10_DropDownExm {
         WebElement nmb= driver.findElement(By.xpath("//span[@dir='auto']"));
         System.out.println(nmb.getText());
 
+       Assert.assertTrue((nmb.getText().contains("8")));
+
+       //bu kod ile icerip icermedigini dogruluyoruz sonucsayisinin
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+        }
+
+        driver.close();
     }
 
 
